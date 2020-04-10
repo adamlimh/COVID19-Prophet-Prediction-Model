@@ -1,11 +1,10 @@
 # COVID19-Prophet-Prediction-Model
-Coronavirus Prediction model of the number of total recovered<br>
 Use Prophet, that follows the sklearn model API, to call its fit and predict the number of total recovered on certain date.
 
 # Installation/ Requirements/ Documentation
-Needs Python 3.x installed<br>
-Packages requirement: pandas, fbprophet, pystan<br>
-The easiest way to install Prophet is in Anaconda.<br>
+* Needs Python 3.x installed<br>
+* Packages requirement: pandas, fbprophet, pystan<br>
+* The easiest way to install Prophet is in Anaconda.<br>
 # Nature of the data
 * Real world data automatically updated from Johns Hopkins CSSE (https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series)<br>
 * Province/State: China - province name; US/Canada/Australia/ - city name, state/province name; Others - name of the event (e.g., "Diamond Princess" cruise ship); other countries - blank.<br>
@@ -17,7 +16,7 @@ The easiest way to install Prophet is in Anaconda.<br>
   
 # Features
 Check out screenshots below<br>
- 
- Output:<br>
- 
- 
+![code](https://raw.githubusercontent.com/adamlimh/COVID19-Prophet-Prediction-Model/master/screenshots/code.png)<br>
+# Output
+![model run](https://raw.githubusercontent.com/adamlimh/COVID19-Prophet-Prediction-Model/master/screenshots/model%20run.png)
+![visualizating](https://raw.githubusercontent.com/adamlimh/COVID19-Prophet-Prediction-Model/master/screenshots/visualizating.png)
