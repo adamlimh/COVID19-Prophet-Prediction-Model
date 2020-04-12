@@ -3,7 +3,7 @@ Use Prophet, that follows the sklearn model API, to call its fit and predict the
 
 # Installation/ Requirements/ Documentation
 * Needs Python 3.x installed<br>
-* Packages requirement: pandas, fbprophet, pystan<br>
+* Packages requirement: pandas, matplotlib, fbprophet, pystan<br>
 * The easiest way to install Prophet is in Anaconda.<br>
 # Nature of the data
 * Real world data automatically updated from Johns Hopkins CSSE (https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series)<br>
