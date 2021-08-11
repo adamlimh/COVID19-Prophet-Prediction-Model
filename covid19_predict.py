@@ -73,7 +73,7 @@ def predict_covid(group='Global', area='Global', types='Confirmed',predict_day=3
         last_record_date = df2['ds'].tail(1).values[0].astype(str)[:10]
         last_record_value = df2['y'].tail(1).values[0]
         print(f'Overall {types} record of {last_record_date}: {last_record_value}')
-        print(forecast[['ds', 'yhat']].rename(columns={'ds':'Date','yhat':'Predictive Overall {}'.format(types),'yhat_lower':'Lower range','yhat_upper':'Upper range'}).reset_index(drop=True).tail(1))
+        print(forecast[['ds', 'yhat','yhat_lower','yhat_upper']].rename(columns={'ds':'Date','yhat':'Predictive Overall {}'.format(types),'yhat_lower':'Lower range','yhat_upper':'Upper range'}).reset_index(drop=True).tail(1))
 
         # Visualizing
         forecast_plot = m.plot(forecast)
