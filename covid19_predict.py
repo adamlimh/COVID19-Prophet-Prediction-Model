@@ -59,5 +59,6 @@ def predict_covid(types='Confirmed',predict_day=7):
 
     # Visualizing
     recovered_forecast_plot = m.plot(forecast)
+    
 if __name__ == '__main__':
   predict_covid(types='Confirmed',predict_day=7)
