@@ -35,24 +35,22 @@ recovered = df.groupby('Date').sum()['Recovered'].reset_index()
 #by increasing changepoint_range, will increase the number of possible places where the rate can change
 #by increasing changepoint_prior_scale, will increase the forecast uncertainty
 
-recovered.columns = ['ds','y']
+confirmed.columns = ['ds','y']
 m = Prophet(changepoint_range=0.95,changepoint_prior_scale=0.5)
 
 #Feed the recovered data
-m.fit(recovered)
+m.fit(confirmed)
 
-# Make the prediction of the following 7 days
-future = m.make_future_dataframe(periods=7)
+# Make the prediction of the following days
+predicted_day = 90
+future = m.make_future_dataframe(periods=predicted_day)
 forecast = m.predict(future)
-
-#Provide the output on Apr. 12, Apr. 13, and Apr. 14
-period=pd.date_range(start="2020-04-12",end="2020-04-14")
 
 forecast['yhat']=forecast['yhat'].astype(int)
 forecast['yhat_lower']=forecast['yhat_lower'].astype(int)
 forecast['yhat_upper']=forecast['yhat_upper'].astype(int)
 
-print(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']][forecast['ds'].isin(period)].rename(columns={'ds':'Date','yhat':'Predictive Overall recovered','yhat_lower':'Lower range','yhat_upper':'Upper range'}).reset_index(drop=True))
+print(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']][forecast['ds'].isin(period)].rename(columns={'ds':'Date','yhat':'Predictive Overall recovered','yhat_lower':'Lower range','yhat_upper':'Upper range'}).reset_index(drop=True).tail(7))
 
 # Visualizing
 recovered_forecast_plot = m.plot(forecast)
